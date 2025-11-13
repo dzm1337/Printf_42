@@ -12,12 +12,12 @@
 
 #include "ft_printf.h"
 
-void	ft_putchar(int c)
+static void	ft_putchar(int c)
 {
 	write(1, &c, 1);
 }
 
-void	ft_putstr(char *str)
+static void	ft_putstr(char *str)
 {
 	int	i;
 
@@ -26,7 +26,7 @@ void	ft_putstr(char *str)
 		write(1, &str[i++], 1);
 }
 
-void	ft_hex_long(unsigned long nb, int *sum)
+static void	ft_hex_long(unsigned long nb, int *sum)
 {
 	*sum += 1;
 	if (nb >= 16)
@@ -39,6 +39,7 @@ int	ft_print_ptr(void *ptr)
 	unsigned long	ptr_value;
 	int				sum;
 
+	sum = 2;
 	if (!ptr)
 	{
 		sum = 5;
@@ -46,7 +47,6 @@ int	ft_print_ptr(void *ptr)
 	}
 	else
 	{
-		sum = 2;
 		ft_print_str("0x");
 		ptr_value = (unsigned long)ptr;
 		ft_hex_long(ptr_value, &sum);

@@ -19,9 +19,6 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 
-test: $(NAME)
-	$(CC) $(CFLAGS) main.c -L. -lftprintf -o run_test
-
 %.o: %.c $(HDRS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
@@ -33,4 +30,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re test
+.PHONY: all clean fclean re
