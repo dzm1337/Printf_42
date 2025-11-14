@@ -6,7 +6,7 @@
 /*   By: dde-paul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 16:39:58 by dde-paul          #+#    #+#             */
-/*   Updated: 2025/11/14 16:39:21 by dde-paul         ###   ########.fr       */
+/*   Updated: 2025/11/14 17:51:25 by dde-paul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,6 @@ int	ft_printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			if (format[i] == '\0')
-				break;
 			if (format[i] == '%')
 				res = ft_print_char('%');
 			else
