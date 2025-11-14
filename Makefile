@@ -21,10 +21,6 @@ $(NAME): $(OBJS)
 
 %.o: %.c $(HDRS)
 	$(CC) $(CFLAGS) -c $< -o $@
-
-test: $(NAME)
-	$(CC) $(CFLAGS) main.c $(SRCS) -o run_test
-
 clean:
 	$(RM) $(OBJS)
 

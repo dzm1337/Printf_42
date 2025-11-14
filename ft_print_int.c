@@ -17,34 +17,22 @@ static void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-static int	ft_intlen(int nb)
-{
-	int	i;
-	
-	i = 0;
-	if (i < 0)
-		i = 1;
-	while (nb != 0)
-	{
-		nb /= 10;
-		i++;
-	}
-	return (i);
-}
-
 int	ft_print_int(int nb)
 {
 	long long	n;
+	int			count;
 
+	count = 0;
 	n = nb;
 	if (n < 0)
 	{
 		ft_putchar('-');
+		count++;
 		n = -n;
 	}
 	if (n > 9)
-		ft_print_int(n / 10);
+		count += ft_print_int(n / 10);
+	count++;
 	ft_putchar((n % 10) + '0');
-	return (ft_intlen(nb));
+	return (count);
 }
-
