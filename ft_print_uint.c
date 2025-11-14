@@ -19,15 +19,15 @@ static void	ft_putchar(int c)
 
 unsigned int	ft_print_uint(unsigned int nb)
 {
-	int	i;
 	unsigned long long	n;
 	int	count;
 
-	i = 0;
+	count = 0;
 	n = nb;
 	if (n > 9)
 		count += ft_print_uint(n / 10);
 	count++;
-	ft_putchar(nb + '0');
+	ft_putchar((n % 10) + '0');
 	return (count);
 }
+
